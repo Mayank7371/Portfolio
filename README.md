@@ -20,7 +20,7 @@ Various RESTful APIs built with Node.js, designed for scalability and maintainab
 ## How to Use
 Clone this repository to explore my projects:
 ```sh
-git clone https://github.com/yourusername/portfolio.git
+git clone git@github.com:Mayank7371/Portfolio.git
 ```
 
 ## Contact
