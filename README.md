@@ -25,5 +25,5 @@ git clone git@github.com:Mayank7371/Portfolio.git
 
 ## Contact
 Feel free to reach out via:
-- **Email:** your.email@example.com
-- **GitHub:** [github.com/yourusername](https://github.com/yourusername)
+- **Email:** neprone.dev@gmail.com
+- **GitHub:** [github.com/yourusername](https://github.com/Mayank7371)
