@@ -1,0 +1,138 @@
+---
+title: 'Basics of Computer Networking'
+description: 'An introduction to computer networking fundamentals — protocols, IP addresses, ports, networking devices, and topologies.'
+image: '/blog/frontend-part-1.png'
+tags: ['networking', 'computer-science', 'fundamentals']
+date: '2023-07-04'
+isPublished: true
+---
+
+This is my first time writing a blog and the start of my journey of learning in public and contributing something good to society and the open source community.
+
+In this blog, I will share my knowledge about the basics of computer networking.
+
+**Computer**: Commonly Oriented Machine Particularly Used for Training and Research.
+
+Now you may wonder — what is the internet? What are protocols? What is WWW?
+
+## What is the Internet?
+
+The **Internet** is a collection of different computers connecting with computers on a global scale, or we can say it is a collection of computer networks.
+
+## Protocols
+
+Protocols are a set of rules for how data is transferred over the internet. They enable computers to communicate with one another — basically how data is sent and received comes under protocol. They are developed by the Internet Society.
+
+## WWW (World Wide Web)
+
+Developed by Tim Berners-Lee, it allows access to all the documents and links present all over the internet.
+
+## What is a Web Server?
+
+A web server is software and hardware that uses HTTP and other protocols to respond to client requests made over the World Wide Web. The main job of a web server is to display website content by storing, processing, and delivering web pages to users.
+
+Examples:
+- Sending and receiving emails
+- Building and publishing web pages
+
+## Protocols in Detail
+
+There are different types of protocols for how data is transferred over the internet:
+
+- **TCP (Transmission Control Protocol):** The data will reach its destination and will not be lost or corrupted on the way.
+- **UDP (User Datagram Protocol):** Used when you don't care about 100% of data reaching the client — e.g. video conferencing.
+- **HTTP (Hypertext Transfer Protocol):** Used by web browsers. When a client sends a request to the server, the server sends a response back. All of this is governed by HTTP.
+
+## Server and Client
+
+This is a client-server architecture in which the client sends a request to the server and the server responds with a web page.
+
+## Data
+
+We get data in **packets** (chunks of data). A network packet is a basic unit of data that is grouped together and transferred over a computer network.
+
+- Packets contain a **header** (contains origin and destination IP address) and a **payload** (the actual data).
+
+## IP Address
+
+A unique address that identifies a device on the internet, consisting of:
+
+```
+[x.x.x.x] — every x ranges between 0–255
+```
+
+For example, the IP address of one of Google's servers is **172.217.1.46**. Google has many servers and all have different IP addresses. If we type google.com it will be resolved to a particular IP address.
+
+Every device has a unique IP address by which it can be identified.
+
+The IP address has 2 functions:
+1. Network interface identification (unique identification of the interface between a device and network)
+2. Local addressing
+
+## How Routers Work
+
+- If a client makes a request, the router will decide which device (D1, D2, or D3) had the request — it does this using **NAT (Network Address Translator)**.
+- The modem knows which device made the request (e.g. D1 had Chrome open) — but which **application** in D1 made the request?
+- IP address decides which **device** to send the data to — but to decide which **application** inside that device, we use **Ports**.
+
+Because one single computer can be running various applications, all of these will have the same IP address (since they are in the same device) but they will have different port numbers.
+
+> If you are talking to your friend using a chat application, you will have an IP address and a port number. The IP address determines where your computers are located and the port number determines which application you two are using to communicate.
+
+## Port Numbers
+
+Port numbers are used to determine what protocol incoming traffic should be directed to — meaning it identifies the specific process to which a message is to be forwarded when it arrives at the server.
+
+- HTTP runs on port **80**
+- **0 – 1023:** Reserved port numbers
+- **1024 – 49151:** Registered for applications like MySQL, MongoDB, etc.
+- **49152 and above:** Available for general use
+
+## Networking Devices
+
+1. **Repeater:** Amplifies and regenerates signals over wide distances. When the signal becomes weak, the repeater copies it and regenerates it bit by bit (a single bit is 0 or 1). Has 2 ports.
+
+2. **Bridge:** A repeater with the added functionality of filtering content by reading the MAC addresses of the source and destination. Also a 2-port device.
+
+3. **Hub:** A multiport repeater. A hub connects multiple wires coming from different branches — for example, the connector in star topology which connects different stations. Hubs cannot filter data, so data packets are sent to all connected devices.
+
+4. **Switch:** Can perform error checking before forwarding data, which makes it very efficient — it does not forward packets that have errors, and forwards good packets selectively to the correct port only.
+
+5. **Router:** A device like a switch that routes data packets based on their IP addresses. Data packets contain a header and payload — the header contains information about the IP address, and the router reads them and routes the packets to the destination.
+
+6. **Gateway:** Called a protocol converter — it converts different protocols into another protocol. Gateways are generally more complex than switches or routers. They work as messenger agents that take data from one system, interpret it, and transfer it to another system.
+
+## Network Topologies
+
+**Topology** is the arrangement of connections within a network. There are different types:
+
+### Bus Topology
+All the computers are connected through a main cable.
+
+**Disadvantage:** If the main cable breaks, the rest of the computers are disconnected.
+
+### Ring Topology
+Every system communicates with one another in a ring.
+
+**Limitations:**
+1. If the cable breaks, you will not be able to transfer data.
+2. A lot of unnecessary calls are made — for example, to send data from A to D, it makes calls to B and C as well.
+
+### Star Topology
+A central device is connected to all the computers.
+
+**Limitation:** If the central device fails, the entire network goes down.
+
+### Tree Topology
+A combination of bus topology and star topology.
+
+### Mesh Topology
+Every computer is connected to every single other computer.
+
+**Limitations:**
+- Scalability issues
+- Expensive
+
+---
+
+These were the different kinds of topologies. We will learn about the OSI model in another blog — thank you very much for reading! I hope you understood the basic meaning of protocols and networking fundamentals.

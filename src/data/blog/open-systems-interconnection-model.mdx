@@ -1,0 +1,117 @@
+---
+title: 'Open Systems Interconnection Model'
+description: 'How do 2 devices communicate over the internet? A deep dive into the 7-layered OSI model introduced by ISO in 1984.'
+image: '/blog/frontend-part-1.png'
+tags: ['networking', 'computer-science', 'fundamentals']
+date: '2023-10-16'
+isPublished: true
+---
+
+If 2 devices want to communicate over the internet, how will they communicate? To accomplish successful communication between devices or computers, the 7-layered OSI model was introduced by the **International Organization for Standardization (ISO)** in 1984.
+
+OSI model is a theoretical model — each layer of this model is a package of protocols. If I say "application layer", it does not mean that it includes applications like Chrome or Firefox, but instead it includes application layer protocols that are needed to make these applications work correctly. Now let's discuss these 7 layers:
+
+![OSI Model Diagram](https://cdn.hashnode.com/res/hashnode/image/upload/v1697494039445/3aa213c2-88c7-4e37-b4c9-11c8484d86c0.png)
+
+## Application Layer
+
+Used by network applications. Network applications means applications that use the Internet like Chrome, Firefox, etc. A web browser is a network application running on your PC — it does not reside in the application layer but it uses application layer protocols like HTTP, HTTPS, etc. to do web surfing. All these protocols form the base for various network services like:
+
+- File transfer (FTP)
+- E-mail (SMTP)
+- Web surfing (HTTP)
+
+## Presentation Layer
+
+The presentation layer receives data from the application layer in the form of characters and numbers. The presentation layer converts these characters and numbers to machine-understandable binary format.
+
+```
+NVBASJHFBVSEG -> 110001010101100101 46125623165837
+```
+
+Before data is transmitted, the presentation layer reduces the number of bits used to represent the original data. This bit reduction process is called **data compression** — it reduces the amount of space needed to store a file (e.g. 5MB -> 2MB) and it can be received at the destination in less time.
+
+To maintain the integrity of data, before transmission data is encrypted. Encryption enhances the security of data — at the sender's side data is encrypted and at the receiver's side, data is decrypted. SSL (Secure Socket Layer) protocol is used for encryption and decryption.
+
+So presentation layer performs 3 basic functions:
+1. **Translation**
+2. **Data Compression**
+3. **Encryption / Decryption**
+
+## Session Layer
+
+The session layer helps in setting up and managing connections, enabling sending and receiving of data followed by the termination of connections or sessions. The session layer contains helpers called APIs — NETBIOS (Network Basic Input-Output System) is an example of such APIs, which allow different applications on different computers to communicate with each other.
+
+Just before a session or connection is established with the server, the server performs **authentication** (a process of verifying who the user is). For this the server uses a username and password. Once matched, a session is established between the user and server. The server also does **authorization** — whether the user is authorized to access the file or not.
+
+The session layer keeps track of the files being downloaded. For example, servers store images and texts. When you request a website, your browser opens a separate session to the web server to download each text and image file separately. These files are received in the form of data packets. The session layer keeps track of which data packet belongs to which file and tracks where the received data packets go.
+
+So the session layer performs 3 functions:
+
+1. **Session Management**
+2. **Authentication**
+3. **Authorization**
+
+## Transport Layer
+
+The transport layer ensures that messages are transmitted in the order in which they are sent and there is no duplication of data.
+
+- The main responsibility of the transport layer is to transfer the data completely.
+- It receives the data from the upper layer and converts them into smaller units known as **segments**.
+- This layer can be termed an end-to-end layer as it provides a point-to-point connection between source and destination to deliver data reliably.
+
+Protocols used in this layer are **TCP** and **UDP**.
+
+### TCP (Transmission Control Protocol)
+
+It is a standard protocol that allows systems to communicate over the internet. It establishes and maintains a connection between hosts. When data is sent over a TCP connection, the TCP protocol divides the data into smaller units known as segments. Each segment travels over the internet using multiple routes, and they arrive in different orders at the destination. TCP reorders the packets in the correct order at the receiving end.
+
+### UDP (User Datagram Protocol)
+
+User Datagram Protocol is a transport layer protocol. It is an **unreliable** transport protocol — the receiver does not send any acknowledgment when the packet is received, and the sender does not wait for any acknowledgment. This makes the protocol unreliable but fast (used in video conferencing, live streaming, etc).
+
+## Network Layer
+
+It is layer 3 that manages device addressing and tracks the location of devices on the network.
+
+- It determines the best path to move data from source to destination based on network conditions, priority of service, and other factors.
+- Routers are the layer 3 devices and are used to provide routing services within an internetwork.
+- Protocols used: **IP** and **IPv6**.
+
+Functions of the Network Layer:
+
+- **Internetworking:** Provides a logical connection between different devices.
+- **Addressing:** Adds the source and destination address to the header of the frame to identify devices on the internet.
+- **Routing:** Determines the best optimal path out of multiple paths from source to destination.
+- **Packetizing:** Receives packets from the upper layer and converts them into packets via the Internet Protocol (IP).
+
+## Data Link Layer
+
+This layer is responsible for the error-free transfer of data frames. It defines the format of the data on the network and provides reliable and efficient communication between two or more devices.
+
+It is mainly responsible for the unique identification of each device that resides on a local network. It contains two sub-layers:
+
+**Logical Link Control (LLC) Layer**
+- Responsible for transferring packets to the Network layer of the receiver.
+- Identifies the address of the network layer protocol from the header.
+- Provides flow control.
+
+**Media Access Control (MAC) Layer**
+- Used for transferring the packets over the network.
+
+Functions of the Data Link Layer:
+
+- **Framing:** Translates the physical raw bit stream into packets known as Frames. Adds the header and trailer to the frame containing the hardware destination and source address.
+- **Physical Addressing:** Adds a header to the frame containing a destination address. The frame is transmitted to the destination address mentioned in the header.
+- **Flow Control:** Ensures a constant data rate is maintained on both sides so no data gets corrupted. Prevents a faster sender from overwhelming a slower receiver.
+- **Error Control:** If any error occurs, the receiver sends an acknowledgment for the retransmission of corrupted frames.
+
+## Physical Layer
+
+It is the hardware section. Here you have your mechanical wires, devices, and signals. When a networking problem occurs, many networking pros go right to the physical layer to check that all cables are properly connected and that the power plug hasn't been pulled from the router, switch, or computer.
+
+The data you get from above is in the form of 0s and 1s. The physical layer transports it into the local media — it can be electrical signals, radio signals, or light. When data is received, the physical layer will receive the signal, convert it into bits, and pass it to the data link layer as a frame — which is then moved to higher layers.
+
+---
+
+Thanks for reading! These 7 layers together make up the OSI model that powers all modern internet communication. Stay tuned for more networking fundamentals.
