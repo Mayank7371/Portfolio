@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: 'Multithreaded Proxy Server',
     description:
       'High-performance HTTP/HTTPS proxy server in C supporting concurrent clients via pthreads and LRU caching for efficient resource management',
-    image: '/assets/logo.png',
+    image: '/project/multithreaded-proxy-server.png',
     link: 'https://github.com/Mayank7371/Multithreaded-proxy-server',
     technologies: [
       { name: 'C', icon: <CIcon key="c" /> },
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: 'nextAI',
     description:
       'AI-powered web application built with Next.js and TypeScript, leveraging modern AI APIs to deliver intelligent and interactive user experiences',
-    image: '/assets/logo.png',
+    image: '/project/nextai.png',
     link: 'https://github.com/Mayank7371/nextAI',
     technologies: [
       { name: 'Next.js', icon: <NextJs key="nextjs" /> },
