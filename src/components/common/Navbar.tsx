@@ -1,5 +1,5 @@
 import { navbarConfig } from '@/config/Navbar';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 

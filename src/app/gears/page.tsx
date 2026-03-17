@@ -5,7 +5,7 @@ import { devices, software, webExtensions } from '@/config/Gears';
 import { generateMetadata as getMetadata } from '@/config/Meta';
 import { ArrowUpRight, Puzzle } from 'lucide-react';
 import { Metadata } from 'next';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import React from 'react';
 
 export const metadata: Metadata = {

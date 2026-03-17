@@ -14,7 +14,6 @@ This portfolio showcases projects, blog posts, experience, and provides a contac
 - Tailwind CSS
 - Shadcn UI
 - MDX
-- Umami Analytics
 
 ---
 
@@ -37,8 +36,6 @@ TELEGRAM_CHAT_ID="your-chat-id"
 GEMINI_API_KEY="your-api-key"
 NODE_ENV="development"
 NEXT_PUBLIC_URL="http://localhost:3000"
-NEXT_PUBLIC_UMAMI_SRC="your-umami-script-url"
-NEXT_PUBLIC_UMAMI_ID="your-umami-website-id"
 ```
 
 ---

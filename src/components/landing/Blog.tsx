@@ -1,5 +1,5 @@
 import { getPublishedBlogPosts } from '@/lib/blog';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import React from 'react';
 
 import { BlogCard } from '../blog/BlogCard';

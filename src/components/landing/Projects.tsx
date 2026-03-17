@@ -1,7 +1,7 @@
 'use client';
 
 import { projects } from '@/config/Projects';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import React from 'react';
 
 import Container from '../common/Container';

@@ -4,7 +4,7 @@ import { Separator } from '@/components/ui/separator';
 import { ProjectCaseStudyFrontmatter } from '@/types/project';
 import rehypeHighlight from '@shikijs/rehype';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import Github from '../svgs/Github';
